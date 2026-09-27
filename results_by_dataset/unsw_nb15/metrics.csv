@@ -1,0 +1,5 @@
+model,accuracy,macro_f1
+"Random Forest / SVM / XGBoost ensemble only (Branch A, chronological split)",0.7397918334667735,
+"CNN-BiLSTM-Attention only (Branch B, chronological split)",0.505804643714972,
+Proposed Tri-Hybrid (meta-learner fused),0.6594275420336269,0.41637806218880113
+"Branch A only, i.i.d. shuffled split (upper bound, no chrono difficulty)",0.7936034901225845,0.47112342535417523

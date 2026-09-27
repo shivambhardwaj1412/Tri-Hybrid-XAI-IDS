@@ -1,0 +1,5 @@
+model,accuracy,macro_f1
+"Branch A only (ML, chronological split)",0.9933960376225736,
+"Branch B only (DL, chronological split)",0.8927356413848309,
+Proposed Tri-Hybrid (fused),0.9926956173704222,0.5077885886536149
+Branch A only (i.i.d. split),0.9917047033141496,0.6031298453487197

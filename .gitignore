@@ -109,18 +109,26 @@ data/processed_unsw_nb15/
 # Sample data can be committed if intentionally small
 # data/sample/
 
-# Large data formats
-*.csv
-*.csv.gz
-*.parquet
-*.pq
-*.feather
-*.arrow
-*.h5
-*.hdf5
-*.npy
-*.npz
+# Large dataset files
+data/**/*.csv
+data/**/*.csv.gz
+data/**/*.parquet
+data/**/*.pq
+data/**/*.feather
+data/**/*.arrow
 
+# Large model files
+models/**/*.joblib
+models/**/*.pkl
+models/**/*.pickle
+models/**/*.keras
+models/**/*.h5
+models/**/*.weights.h5
+models/**/*.onnx
+models/**/*.pt
+models/**/*.pth
+models/**/*.bin
+models/**/*.safetensors
 # ------------------------------------------------------------
 # MACHINE LEARNING MODEL ARTIFACTS
 # ------------------------------------------------------------
@@ -246,3 +254,19 @@ experiments/tmp/
 !results/**/*.png
 !results/**/*.jpg
 !results/**/*.jpeg
+
+# Dataset-specific trained models
+models_by_dataset/**/*.joblib
+models_by_dataset/**/*.pkl
+models_by_dataset/**/*.pickle
+models_by_dataset/**/*.keras
+models_by_dataset/**/*.h5
+models_by_dataset/**/*.weights.h5
+models_by_dataset/**/*.onnx
+models_by_dataset/**/*.pt
+models_by_dataset/**/*.pth
+models_by_dataset/**/*.bin
+models_by_dataset/**/*.safetensors
+
+# Ignore all trained model artifacts
+models_by_dataset/
