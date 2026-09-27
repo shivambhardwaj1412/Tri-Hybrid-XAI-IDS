@@ -1,0 +1,6 @@
+{
+  "branch_a_ml_only_acc": 0.9933960376225736,
+  "branch_b_dl_only_acc": 0.8927356413848309,
+  "fused_meta_acc": 0.9926956173704222,
+  "fused_meta_f1_macro": 0.5077885886536149
+}

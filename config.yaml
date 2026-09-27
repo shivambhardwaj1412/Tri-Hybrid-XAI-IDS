@@ -1,0 +1,292 @@
+# =============================================================
+# Tri-Hybrid XAI-IDS
+# Complete Configuration
+# =============================================================
+
+project:
+  name: "Tri-Hybrid-XAI-IDS"
+  seed: 42
+
+
+# =============================================================
+# DATASET CONFIGURATION
+# =============================================================
+
+data:
+
+  # -----------------------------------------------------------
+  # SELECT DATASET HERE
+  #
+  # Available:
+  #   cicids2017
+  #   nsl_kdd
+  #   unsw_nb15
+  #   sample
+  #
+  # This value is used when you run:
+  #
+  #   python train_all.py
+  #
+  # It can also be overridden from command line:
+  #
+  #   python train_all.py --dataset cicids2017
+  # -----------------------------------------------------------
+
+  dataset: "nsl_kdd"
+
+  raw_dir: "data/raw"
+
+  processed_dir: "data/processed_nsl_kdd"
+
+  sample_dir: "data/sample"
+
+  label_column: "Label"
+
+
+  # -----------------------------------------------------------
+  # Train / validation / test
+  # -----------------------------------------------------------
+
+  test_size: 0.20
+
+  val_size: 0.15
+
+
+  # -----------------------------------------------------------
+  # CICIDS2017 MEMORY-SAFE SETTINGS
+  #
+  # Your machine has approximately 8 GB RAM.
+  #
+  # Full CICIDS2017 is several million rows and should NOT
+  # be loaded completely into RAM.
+  # -----------------------------------------------------------
+
+  max_raw_rows: 120000
+
+  cicids_chunk_size: 25000
+
+
+  # -----------------------------------------------------------
+  # Columns removed before training
+  # -----------------------------------------------------------
+
+  drop_columns:
+
+    - "Flow ID"
+
+    - "Src IP"
+
+    - "Dst IP"
+
+    - "Source IP"
+
+    - "Destination IP"
+
+    - "id"
+
+
+# =============================================================
+# PREPROCESSING
+# =============================================================
+
+preprocessing:
+
+  # -----------------------------------------------------------
+  # Scaling
+  #
+  # standard = StandardScaler
+  # minmax   = MinMaxScaler
+  # -----------------------------------------------------------
+
+  scaler: "standard"
+
+
+  # -----------------------------------------------------------
+  # SMOTE-Tomek
+  # -----------------------------------------------------------
+
+  apply_smote_tomek: true
+
+  smote_tomek_sampling_strategy: "auto"
+
+
+  # -----------------------------------------------------------
+  # Maximum rows passed to SMOTE-Tomek
+  #
+  # Important for an 8 GB RAM system.
+  # -----------------------------------------------------------
+
+  smote_tomek_max_rows: 8000
+
+
+  # -----------------------------------------------------------
+  # Classes below this number are not passed to SMOTE
+  # -----------------------------------------------------------
+
+  smote_tomek_min_class_rows: 50
+
+
+# =============================================================
+# SEQUENCE / TEMPORAL BRANCH
+# =============================================================
+
+sequence:
+
+  # Number of consecutive network flows
+  window_size: 10
+
+  # Sliding-window step
+  stride: 1
+
+
+# =============================================================
+# MACHINE LEARNING BRANCH
+# =============================================================
+
+ml_branch:
+
+  models:
+
+    random_forest:
+
+      n_estimators: 200
+
+      max_depth: 18
+
+
+    svm:
+
+      kernel: "rbf"
+
+      C: 4.0
+
+
+    xgboost:
+
+      n_estimators: 250
+
+      max_depth: 7
+
+      learning_rate: 0.1
+
+
+  # -----------------------------------------------------------
+  # SHAP FEATURE SELECTION
+  # -----------------------------------------------------------
+
+  shap_feature_selection:
+
+    enabled: true
+
+    top_k_features: 20
+
+    max_samples: 5000
+
+
+  # -----------------------------------------------------------
+  # Maximum ML training rows
+  #
+  # SVM probability=True is computationally expensive.
+  # -----------------------------------------------------------
+
+  max_training_samples: 20000
+
+
+# =============================================================
+# DEEP LEARNING BRANCH
+# =============================================================
+
+dl_branch:
+
+  # CNN
+  cnn_filters: 32
+
+  cnn_kernel_size: 3
+
+
+  # BiLSTM
+  lstm_units: 64
+
+
+  # Attention
+  attention_units: 32
+
+
+  # Dropout
+  dropout: 0.3
+
+
+  # Training
+  epochs: 8
+
+  batch_size: 128
+
+  learning_rate: 0.001
+
+
+  # -----------------------------------------------------------
+  # Maximum chronological rows used by DL branch
+  # -----------------------------------------------------------
+
+  max_training_rows: 30000
+
+
+# =============================================================
+# META LEARNER
+# =============================================================
+
+meta_learner:
+
+  type: "logistic_regression"
+
+  cv_folds: 5
+
+
+# =============================================================
+# EXPLAINABLE AI
+# =============================================================
+
+xai:
+
+  shap_top_k: 8
+
+  lime_top_k: 8
+
+  lime_num_samples: 500
+
+  attention_top_k: 8
+
+
+# =============================================================
+# MODEL AGREEMENT
+# =============================================================
+
+agreement:
+
+  method: "jaccard_topk"
+
+  trusted_threshold: 0.5
+
+
+# =============================================================
+# FEDERATED LEARNING
+# =============================================================
+
+federated:
+
+  num_nodes: 4
+
+  local_epochs: 2
+
+  rounds: 5
+
+
+# =============================================================
+# PROJECT PATHS
+# =============================================================
+
+paths:
+
+  models_dir: "models"
+
+  results_dir: "results"

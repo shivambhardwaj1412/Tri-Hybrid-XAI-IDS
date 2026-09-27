@@ -1,0 +1,22 @@
+[
+  "src_bytes",
+  "same_srv_rate",
+  "flag_SF",
+  "dst_bytes",
+  "dst_host_serror_rate",
+  "diff_srv_rate",
+  "flag_S0",
+  "serror_rate",
+  "count",
+  "dst_host_same_srv_rate",
+  "dst_host_srv_count",
+  "dst_host_srv_serror_rate",
+  "logged_in",
+  "dst_host_diff_srv_rate",
+  "dst_host_same_src_port_rate",
+  "srv_serror_rate",
+  "service_private",
+  "protocol_type_icmp",
+  "dst_host_count",
+  "dst_host_rerror_rate"
+]

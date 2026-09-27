@@ -1,0 +1,22 @@
+[
+  "ct_srv_dst",
+  "sbytes",
+  "dmean",
+  "proto_unas",
+  "sttl",
+  "ct_dst_src_ltm",
+  "service_-",
+  "ct_dst_sport_ltm",
+  "sloss",
+  "smean",
+  "proto_udp",
+  "ct_srv_src",
+  "ct_state_ttl",
+  "service_dns",
+  "ct_src_dport_ltm",
+  "proto_tcp",
+  "spkts",
+  "sload",
+  "dbytes",
+  "dloss"
+]

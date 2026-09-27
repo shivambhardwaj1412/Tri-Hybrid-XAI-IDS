@@ -1,0 +1,73 @@
+{
+  "dataset_used": "nsl_kdd",
+  "dataset_source": "data/raw/nsl_kdd",
+  "selected_ml_features": [
+    "wrong_fragment",
+    "service_ecr_i",
+    "logged_in",
+    "src_bytes",
+    "count",
+    "dst_host_srv_diff_host_rate",
+    "num_compromised",
+    "dst_bytes",
+    "dst_host_same_src_port_rate",
+    "dst_host_count",
+    "protocol_type_icmp",
+    "srv_count",
+    "dst_host_diff_srv_rate",
+    "dst_host_serror_rate",
+    "protocol_type_tcp",
+    "dst_host_srv_rerror_rate",
+    "dst_host_same_srv_rate",
+    "dst_host_srv_count",
+    "hot",
+    "flag_SF"
+  ],
+  "n_selected_features": 20,
+  "total_features": 125,
+  "n_classes": 23,
+  "classes": [
+    "back",
+    "buffer_overflow",
+    "ftp_write",
+    "guess_passwd",
+    "imap",
+    "ipsweep",
+    "land",
+    "loadmodule",
+    "multihop",
+    "neptune",
+    "nmap",
+    "normal",
+    "perl",
+    "phf",
+    "pod",
+    "portsweep",
+    "rootkit",
+    "satan",
+    "smurf",
+    "spy",
+    "teardrop",
+    "warezclient",
+    "warezmaster"
+  ],
+  "train_shape": [
+    38373,
+    125
+  ],
+  "validation_shape": [
+    18896,
+    125
+  ],
+  "test_shape": [
+    25195,
+    125
+  ],
+  "branch_a_ml_only_acc": 0.9966980188112867,
+  "branch_b_dl_only_acc": 0.8955373223934361,
+  "fused_meta_acc": 0.9961977186311787,
+  "fused_meta_f1_macro": 0.5188912332501594,
+  "branch_a_iid_split_accuracy": 0.9940464377852749,
+  "branch_a_iid_split_macro_f1": 0.5315225653920242,
+  "runtime_seconds": 318.0
+}

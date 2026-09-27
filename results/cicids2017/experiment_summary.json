@@ -1,0 +1,56 @@
+{
+  "dataset_used": "cicids2017",
+  "dataset_source": "data/raw/cicids2017",
+  "selected_ml_features": [
+    "Destination Port",
+    "Fwd Packet Length Mean",
+    "min_seg_size_forward",
+    "Source Port",
+    "Packet Length Std",
+    "Avg Fwd Segment Size",
+    "Average Packet Size",
+    "Fwd Packet Length Max",
+    "Init_Win_bytes_forward",
+    "Fwd IAT Std",
+    "Packet Length Mean",
+    "Max Packet Length",
+    "Packet Length Variance",
+    "Subflow Fwd Bytes",
+    "Fwd IAT Min",
+    "Init_Win_bytes_backward",
+    "Fwd Packet Length Std",
+    "Avg Bwd Segment Size",
+    "Bwd Packet Length Std",
+    "Flow IAT Std"
+  ],
+  "n_selected_features": 20,
+  "total_features": 80,
+  "n_classes": 6,
+  "classes": [
+    "BENIGN",
+    "DDoS",
+    "DoS slowloris",
+    "FTP-Patator",
+    "PortScan",
+    "Web Attack \u0096 Brute Force"
+  ],
+  "train_shape": [
+    23071,
+    80
+  ],
+  "validation_shape": [
+    17996,
+    80
+  ],
+  "test_shape": [
+    23995,
+    80
+  ],
+  "branch_a_ml_only_acc": 0.9982986389111289,
+  "branch_b_dl_only_acc": 0.9777822257806245,
+  "fused_meta_acc": 0.9982986389111289,
+  "fused_meta_f1_macro": 0.597601694086235,
+  "branch_a_iid_split_accuracy": 0.999124817670348,
+  "branch_a_iid_split_macro_f1": 0.7249519363711706,
+  "runtime_seconds": 131.4
+}

@@ -1,0 +1,60 @@
+{
+  "dataset_used": "unsw_nb15",
+  "dataset_source": "data/raw/unsw_nb15",
+  "selected_ml_features": [
+    "ct_srv_dst",
+    "sbytes",
+    "dmean",
+    "proto_unas",
+    "sttl",
+    "ct_dst_src_ltm",
+    "service_-",
+    "ct_dst_sport_ltm",
+    "sloss",
+    "smean",
+    "proto_udp",
+    "ct_srv_src",
+    "ct_state_ttl",
+    "service_dns",
+    "ct_src_dport_ltm",
+    "proto_tcp",
+    "spkts",
+    "sload",
+    "dbytes",
+    "dloss"
+  ],
+  "n_selected_features": 20,
+  "total_features": 199,
+  "n_classes": 10,
+  "classes": [
+    "Analysis",
+    "Backdoor",
+    "DoS",
+    "Exploits",
+    "Fuzzers",
+    "Generic",
+    "Normal",
+    "Reconnaissance",
+    "Shellcode",
+    "Worms"
+  ],
+  "train_shape": [
+    37613,
+    199
+  ],
+  "validation_shape": [
+    24412,
+    199
+  ],
+  "test_shape": [
+    32549,
+    199
+  ],
+  "branch_a_ml_only_acc": 0.7536035897593509,
+  "branch_b_dl_only_acc": 0.5005685834588315,
+  "fused_meta_acc": 0.668008728524449,
+  "fused_meta_f1_macro": 0.4571874223893305,
+  "branch_a_iid_split_accuracy": 0.7744323942363821,
+  "branch_a_iid_split_macro_f1": 0.5224996919474365,
+  "runtime_seconds": 641.1
+}

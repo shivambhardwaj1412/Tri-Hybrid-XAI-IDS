@@ -1,0 +1,42 @@
+{
+  "dataset_used": "cicids2017",
+  "NOTE": "Metrics below were produced by ACTUALLY RUNNING this codebase. If dataset='sample', they are on the bundled SYNTHETIC sample data (see src/utils/generate_sample_data.py) and are NOT CICIDS2017/UNSW-NB15 benchmark results -- replace data/raw with the real datasets and set data.dataset in config.yaml to regenerate real benchmark numbers.",
+  "selected_ml_features": [
+    "Fwd Packet Length Mean",
+    "Subflow Fwd Bytes",
+    "Packet Length Mean",
+    "Fwd Packet Length Max",
+    "Bwd Packet Length Std",
+    "Average Packet Size",
+    "Total Length of Fwd Packets",
+    "Avg Fwd Segment Size",
+    "PSH Flag Count",
+    "Bwd Packets/s",
+    "Flow Duration",
+    "Flow IAT Max",
+    "Avg Bwd Segment Size",
+    "Packet Length Variance",
+    "Bwd Packet Length Mean",
+    "Bwd Packet Length Max",
+    "Flow IAT Std",
+    "Packet Length Std",
+    "Subflow Fwd Packets",
+    "Total Length of Bwd Packets"
+  ],
+  "n_classes": 6,
+  "classes": [
+    "BENIGN",
+    "DDoS",
+    "PortScan",
+    "Web Attack \u0096 Brute Force",
+    "Web Attack \u0096 Sql Injection",
+    "Web Attack \u0096 XSS"
+  ],
+  "branch_a_ml_only_acc": 0.9958971279895927,
+  "branch_b_dl_only_acc": 0.9335534874412088,
+  "fused_meta_acc": 0.9888922245571901,
+  "fused_meta_f1_macro": 0.4943165647860308,
+  "branch_a_iid_split_accuracy": 0.9957510713893264,
+  "branch_a_iid_split_macro_f1": 0.5634316289150426,
+  "runtime_seconds": 74.2
+}

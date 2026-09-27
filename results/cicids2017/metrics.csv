@@ -1,0 +1,5 @@
+model,accuracy,macro_f1
+Branch A - ML Ensemble (chronological split),0.9982986389111289,
+Branch B - CNN-BiLSTM-Attention (chronological split),0.9777822257806245,
+Proposed Tri-Hybrid (Meta-Learner Fusion),0.9982986389111289,0.597601694086235
+Branch A - ML Ensemble (i.i.d. shuffled split),0.999124817670348,0.7249519363711706

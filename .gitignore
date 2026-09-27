@@ -1,0 +1,248 @@
+# ============================================================
+# Tri-Hybrid XAI-IDS
+# Git Ignore Configuration
+# ============================================================
+
+# ------------------------------------------------------------
+# Python
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Python packaging
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# ------------------------------------------------------------
+# Jupyter / Colab
+# ------------------------------------------------------------
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ------------------------------------------------------------
+# IDE / Editor
+# ------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+
+# VS Code local settings
+.history/
+
+# ------------------------------------------------------------
+# Operating system
+# ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ------------------------------------------------------------
+# Environment / Secrets
+# ------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+*.pem
+*.key
+
+# ------------------------------------------------------------
+# LOGS
+# ------------------------------------------------------------
+*.log
+logs/
+
+# ------------------------------------------------------------
+# RAW DATASETS
+# ------------------------------------------------------------
+# DO NOT upload large cybersecurity datasets to GitHub.
+
+data/raw/
+data/raw_*/
+data/downloads/
+data/external/
+
+# CICIDS2017
+data/raw_cicids2017/
+
+# NSL-KDD
+data/raw_nsl_kdd/
+
+# UNSW-NB15
+data/raw_unsw_nb15/
+
+# ------------------------------------------------------------
+# PROCESSED DATA
+# ------------------------------------------------------------
+# Large CSV / Parquet / NumPy files should remain local.
+
+data/processed/
+data/processed_*/
+data/processed_cicids2017/
+data/processed_nsl_kdd/
+data/processed_unsw_nb15/
+
+# Sample data can be committed if intentionally small
+# data/sample/
+
+# Large data formats
+*.csv
+*.csv.gz
+*.parquet
+*.pq
+*.feather
+*.arrow
+*.h5
+*.hdf5
+*.npy
+*.npz
+
+# ------------------------------------------------------------
+# MACHINE LEARNING MODEL ARTIFACTS
+# ------------------------------------------------------------
+# Trained models can be hundreds of MB or larger.
+# Keep them local unless using Git LFS.
+
+models/*/*.joblib
+models/*/*.pkl
+models/*/*.pickle
+models/*/*.keras
+models/*/*.h5
+models/*/*.weights.h5
+models/*/*.onnx
+models/*/*.pt
+models/*/*.pth
+models/*/*.bin
+models/*/*.safetensors
+
+# Model directories
+models/cicids2017/
+models/nsl_kdd/
+models/unsw_nb15/
+
+# If you want the directory structure visible in Git:
+# add .gitkeep files manually.
+
+# ------------------------------------------------------------
+# ML CACHE / TEMP
+# ------------------------------------------------------------
+.cache/
+cache/
+tmp/
+temp/
+
+*.tmp
+*.bak
+*.swp
+
+# ------------------------------------------------------------
+# TensorFlow / Keras
+# ------------------------------------------------------------
+.keras/
+keras_metadata.pb
+
+# TensorBoard
+runs/
+tensorboard/
+logs/
+
+# ------------------------------------------------------------
+# SHAP / LIME generated caches
+# ------------------------------------------------------------
+shap_cache/
+lime_cache/
+xai_cache/
+
+# ------------------------------------------------------------
+# Large generated plots / exports
+# ------------------------------------------------------------
+# Uncomment these if your result plots become very large.
+# results/**/*.svg
+# results/**/*.pdf
+
+# ------------------------------------------------------------
+# Generated ZIP / ARCHIVE files
+# ------------------------------------------------------------
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+
+# ------------------------------------------------------------
+# Large thesis exports
+# ------------------------------------------------------------
+# Keep final thesis PDFs only if intentionally committed.
+# *.pdf
+
+# Temporary Word / LibreOffice files
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# ------------------------------------------------------------
+# Streamlit
+# ------------------------------------------------------------
+.streamlit/secrets.toml
+
+# ------------------------------------------------------------
+# OS / project-specific temporary files
+# ------------------------------------------------------------
+*.orig
+*.rej
+*.pid
+*.seed
+
+# ------------------------------------------------------------
+# Claude / AI assistant temporary files
+# ------------------------------------------------------------
+.claude/
+.claude-cache/
+
+# ------------------------------------------------------------
+# Local experiment files
+# ------------------------------------------------------------
+experiments/local/
+experiments/tmp/
+
+# ------------------------------------------------------------
+# Keep important documentation and configuration
+# ------------------------------------------------------------
+!README.md
+!CLAUDE.md
+!configs/
+!configs/**
+!docs/
+!docs/**
+!results/
+!results/**/*.csv
+!results/**/*.json
+!results/**/*.md
+!results/**/*.txt
+!results/**/*.png
+!results/**/*.jpg
+!results/**/*.jpeg

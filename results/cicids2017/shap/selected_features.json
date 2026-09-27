@@ -1,0 +1,22 @@
+[
+  "Destination Port",
+  "Fwd Packet Length Mean",
+  "min_seg_size_forward",
+  "Source Port",
+  "Packet Length Std",
+  "Avg Fwd Segment Size",
+  "Average Packet Size",
+  "Fwd Packet Length Max",
+  "Init_Win_bytes_forward",
+  "Fwd IAT Std",
+  "Packet Length Mean",
+  "Max Packet Length",
+  "Packet Length Variance",
+  "Subflow Fwd Bytes",
+  "Fwd IAT Min",
+  "Init_Win_bytes_backward",
+  "Fwd Packet Length Std",
+  "Avg Bwd Segment Size",
+  "Bwd Packet Length Std",
+  "Flow IAT Std"
+]
